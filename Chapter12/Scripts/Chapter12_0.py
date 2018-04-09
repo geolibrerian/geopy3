@@ -1,7 +1,7 @@
 # Chapter 12-0.py
 # by Silas Toms
 #
-# This script demonstrates how to create a new database
+# This script demonstrates how to create a new database, using SQLAlchemy tools. Refer to the previous chapter for any missing modules
 
 
 # The database connections and session management are managed with SQLAlchemy functions
@@ -12,11 +12,11 @@ from sqlalchemy.ext.declarative import declarative_base
 
 
 
-
-engine = create_engine('postgresql://postgres:g30d@t@@localhost:5433/chapter12', echo=True)
+# Pass the connection string to the create engine function
+engine = create_engine('postgresql://postgres:g30d@t@@localhost:5432/chapter12', echo=True)
 
 # Uncomment the line below if you need to drop the database (having already created it) and recreate it.
-drop_database(engine.url)
+#drop_database(engine.url)
 
 
 # Check to ensure that the database doesn't exist
