@@ -17,7 +17,7 @@ cursor = connection.cursor()
 insert = """INSERT INTO county
      VALUES ({count},'{name}','12','FL','{geom}');
 """
-countyfile = r'C:\Data\florida_OSM\FloridaCountiesSingle.shp'
+countyfile = r'FloridaCountiesSingle.shp'
 # Read the County shapefile using the Reader class of the pyshp module
 county_shapefile = shapefile.Reader(countyfile)
 county_shapes = county_shapefile.shapes()

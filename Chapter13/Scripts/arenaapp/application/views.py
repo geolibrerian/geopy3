@@ -104,7 +104,7 @@ def arena_intersect(arena_id):
 @app.route('/nba/api/v0.1/county', methods=['GET'])
 def get_counties():
 	counties = session.query(County).all()
-	geoms = {county.id:smapping(to_shape(county.geom)) for county in counties}
+	geoms = {county.id:shapely.geometry.geo.mapping(to_shape(county.geom)) for county in counties}
 	data = [{"type": "Feature",	
 	"properties":{"name":county.name, "state":county.state.name}, 
 	"geometry":{"type":"MultiPolygon",	

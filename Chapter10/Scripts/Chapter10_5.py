@@ -1,9 +1,26 @@
 import pyarrow as pa
 import pandas as pd
-df = pd.DataFrame({"A": [1, 2], "B": ['c', 'd']})
+from pymapd import connect
+import shapefile
+connection = connect(user="mapd", password= "i-dfsfsdfsdfwq", 
+     host="ec2-34-78-82.us-west-2.compute.amazonaws.com", dbname="mapd")
+cursor = connection.cursor()
+
+
+create = """CREATE TABLE juneau_addresses (  
+	LON FLOAT, LAT FLOAT, 
+	SNUMBER VARCHAR(30),STREET VARCHAR(200) );
+"""
+
+cursor.execute(create)
+df = pd.read_csv('city_of_juneau.csv')
 table = pa.Table.from_pandas(df)
-con.load_table_arrow("table_name", table)
-df = pd.DataFrame({"A": [1, 2], "B": ["c", "d"]})
-con.load_table_columnar("table_name", df, preserve_index=False)
-data = [(1, "c"), (2, "d")]
-con.load_table("table_name", data)
+print(table)
+connection.load_table("juneau_addresses", table)
+
+
+cursor.execute(create)
+df = pd.read_csv('calaveras.csv')
+table = pa.Table.from_pandas(df)
+print(table)
+connection.load_table_rowwise("addressescalaveras", df)
