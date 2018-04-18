@@ -5,8 +5,8 @@
 
 import pymapd
 from pymapd import connect
-connection = connect(user="mapd", password= "Hyper1nteract1ve!", 
-	host="community-azure.mapd.com", dbname="mapd")
+connection = connect(user="mapd", password= "Inter@ct1v!", 
+	host="community.mapd.com", dbname="mapd")
 import time
 
 point = "POINT(-80.896146 27.438610)"
