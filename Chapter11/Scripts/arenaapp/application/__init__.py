@@ -11,7 +11,7 @@
 
 import flask
 app = flask.Flask(__name__)
-conn_string = 'postgresql://postgres:g30d@t@@localhost:5433/chapter11'
+conn_string = 'postgresql://postgresuser:password@localhost:5432/chapter11'
 app.config['SQLALCHEMY_DATABASE_URI'] = conn_string	
 app.config['SECRET_KEY'] = "SECRET_KEY"
 import application.views

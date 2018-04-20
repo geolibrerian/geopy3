@@ -13,7 +13,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 
 # Pass the connection string to the create engine function
-engine = create_engine('postgresql://postgres:g30d@t@@localhost:5432/chapter12', echo=True)
+engine = create_engine('postgresql://postgresuser:password@localhost:5432/chapter12', echo=True)
 
 # Uncomment the line below if you need to drop the database (having already created it) and recreate it.
 #drop_database(engine.url)

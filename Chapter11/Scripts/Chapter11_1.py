@@ -27,7 +27,7 @@ from tkinter import Tk
  
 
 # Connect to the database called chapter11 using SQLAlchemy functions
-conn_string = 'postgresql://postgres:g30d@t@@localhost:5433/chapter11'
+conn_string = 'postgresql://postgresuser:password@localhost:5432/chapter11'
 engine = create_engine(conn_string, echo=True)
 Session = sessionmaker(bind=engine)
 session = Session()

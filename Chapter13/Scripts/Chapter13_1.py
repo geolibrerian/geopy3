@@ -8,7 +8,7 @@ from sqlalchemy.orm import sessionmaker
 from geoalchemy2 import Geometry
 
 # Connect to the database called chapter11 using SQLAlchemy functions
-engine = create_engine('postgresql://postgres:g30d@t@@localhost:5433/chapter11')
+engine = create_engine('postgresql://postgresuser:password@localhost:5432/chapter11')
 Session = sessionmaker(bind=engine)
 session = Session()
 app = flask.Flask(__name__)
