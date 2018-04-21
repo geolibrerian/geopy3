@@ -1,6 +1,6 @@
 from mapbox import Datasets
 import json
-datasets = Datasets(access_token='sk.eyJ1IjoibG9raXByZXNpZGVudCIsImEiOiJjamc4aGRpZ3oyM3BxMzNuNWIzaDdja2ZzIn0.oFqNkH9Mlyv3ExsGknvSGg')
+datasets = Datasets(access_token='sk.eyJ1IjoibG9raXByJjamc4aGRpZ3oyM3BxMzNuNWIzaDdja2ZzIn0.oFqNkH9Mlyv3ExsGknvSGg')
 create_resp = datasets.create(name="Bay Area Zips", 
               description = "ZTCA zones for the Bay Area")
 listing_resp = datasets.list()
